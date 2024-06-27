@@ -7,6 +7,7 @@ import com.fincatto.documentofiscal.validadores.DFStringValidador;
 import org.simpleframework.xml.Element;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
 public class NFNotaInfoFormaPagamento extends DFBase {
 
@@ -26,6 +27,9 @@ public class NFNotaInfoFormaPagamento extends DFBase {
 
     @Element(name = "card", required = false)
     private NFNotaInfoCartao cartao;
+    
+    @Element(name = "dPag", required = false)
+    private LocalDate dataPagamento;
 
     public NFNotaInfoFormaPagamento setCartao(final NFNotaInfoCartao cartao) {
         this.cartao = cartao;
@@ -70,6 +74,15 @@ public class NFNotaInfoFormaPagamento extends DFBase {
     public NFNotaInfoFormaPagamento setDescricaoMeioPagamento(String descricaoMeioPagamento) {
         DFStringValidador.tamanho2ate60(descricaoMeioPagamento, "Descricao Meio Pagamento");
         this.descricaoMeioPagamento = descricaoMeioPagamento;
+        return this;
+    }
+
+    public LocalDate getDataPagamento() {
+        return dataPagamento;
+    }
+
+    public NFNotaInfoFormaPagamento setDataPagamento(final LocalDate dataPagamento) {
+        this.dataPagamento = dataPagamento;
         return this;
     }
 }

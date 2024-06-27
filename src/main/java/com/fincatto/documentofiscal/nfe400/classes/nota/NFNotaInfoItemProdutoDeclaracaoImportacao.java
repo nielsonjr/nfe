@@ -40,6 +40,9 @@ public class NFNotaInfoItemProdutoDeclaracaoImportacao extends DFBase {
 
     @Element(name = "CNPJ", required = false)
     private String cnpj;
+    
+    @Element(name = "CPF", required = false)
+    private String cpf;
 
     @Element(name = "UFTerceiro", required = false)
     private String ufTerceiro;
@@ -148,5 +151,14 @@ public class NFNotaInfoItemProdutoDeclaracaoImportacao extends DFBase {
 
     public List<NFNotaInfoItemProdutoDeclaracaoImportacaoAdicao> getAdicoes() {
         return this.adicoes;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        DFStringValidador.cpf(cpf);
+        this.cpf = cpf;
     }
 }

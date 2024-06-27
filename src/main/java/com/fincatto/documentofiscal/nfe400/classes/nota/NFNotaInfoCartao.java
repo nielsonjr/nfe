@@ -18,6 +18,12 @@ public class NFNotaInfoCartao extends DFBase {
 
     @Element(name = "cAut", required = false)
     private String numeroAutorizacaoOperacaoCartao;
+    
+    @Element(name = "CNPJReceb", required = false)
+    private String cnpjBeneficiario;
+    
+    @Element(name = "idTermPag", required = false)
+    private String idTerminalPagamento;
 
     public void setCnpj(final String cnpj) {
         DFStringValidador.cnpj(cnpj);
@@ -25,7 +31,7 @@ public class NFNotaInfoCartao extends DFBase {
     }
 
     public void setNumeroAutorizacaoOperacaoCartao(final String numeroAutorizacaoOperacaoCartao) {
-        DFStringValidador.tamanho20(numeroAutorizacaoOperacaoCartao, "Numero Autorizacao Operacao Cartao");
+        DFStringValidador.tamanho128(numeroAutorizacaoOperacaoCartao, "Numero Autorizacao Operacao Cartao");
         this.numeroAutorizacaoOperacaoCartao = numeroAutorizacaoOperacaoCartao;
     }
 
@@ -51,6 +57,24 @@ public class NFNotaInfoCartao extends DFBase {
 
     public void setTipoIntegracao(final NFTipoIntegracaoPagamento tipoIntegracao) {
         this.tipoIntegracao = tipoIntegracao;
+    }
+
+    public String getCnpjBeneficiario() {
+        return cnpjBeneficiario;
+    }
+
+    public void setCnpjBeneficiario(String cnpjBeneficiario) {
+        DFStringValidador.cnpj(cnpjBeneficiario);
+        this.cnpjBeneficiario = cnpjBeneficiario;
+    }
+
+    public String getIdTerminalPagamento() {
+        return idTerminalPagamento;
+    }
+
+    public void setIdTerminalPagamento(String idTerminalPagamento) {
+        DFStringValidador.tamanho40(idTerminalPagamento, "Identificador do Terminal de Pagamento");
+        this.idTerminalPagamento = idTerminalPagamento;
     }
 
 }

@@ -3,6 +3,8 @@ package com.fincatto.documentofiscal.nfe400.classes.nota;
 import com.fincatto.documentofiscal.DFBase;
 import com.fincatto.documentofiscal.validadores.DFBigDecimalValidador;
 import com.fincatto.documentofiscal.validadores.DFListValidador;
+import com.fincatto.documentofiscal.validadores.DFStringValidador;
+
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
 
@@ -17,6 +19,13 @@ public class NFNotaInfoPagamento extends DFBase {
 
     @Element(name = "vTroco", required = false)
     private String valorTroco;
+    
+    @Element(name = "CNPJPag", required = false)
+    private String cnpjTransacionalPagamento;
+    
+    @Element(name = "UFPag", required = false)
+    private String ufPagamento;
+
 
     public NFNotaInfoPagamento setDetalhamentoFormasPagamento(final List<NFNotaInfoFormaPagamento> detalhamentoFormasPagamento) {
         DFListValidador.tamanho100(detalhamentoFormasPagamento, "Detalhamento de formas de pagamento");
@@ -34,5 +43,23 @@ public class NFNotaInfoPagamento extends DFBase {
 
     public void setValorTroco(final BigDecimal valorTroco) {
         this.valorTroco = DFBigDecimalValidador.tamanho15Com2CasasDecimais(valorTroco, "Valor troco");
+    }
+    
+    public String getCnpjTransacionalPagamento() {
+        DFStringValidador.cnpj(cnpjTransacionalPagamento);
+        return cnpjTransacionalPagamento;
+    }
+
+    public void setCnpjTransacionalPagamento(String cnpjTransacionalPagamento) {
+        this.cnpjTransacionalPagamento = cnpjTransacionalPagamento;
+    }
+
+    public String getUfPagamento() {
+        return ufPagamento;
+    }
+
+    public void setUfPagamento(String ufPagamento) {
+        DFStringValidador.exatamente2(ufPagamento, "UF onde o pagamento foi processado");
+        this.ufPagamento = ufPagamento;
     }
 }

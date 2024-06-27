@@ -48,6 +48,9 @@ public class NFNotaInfoItemImpostoICMS20 extends DFBase {
 
     @Element(name = "motDesICMS", required = false)
     private NFNotaMotivoDesoneracaoICMS desoneracao;
+    
+    @Element(name = "indDeduzDeson", required = false)
+    private NFInfoDeduzDesoneracao indicadorDeduzDesoneracao;
 
     public void setOrigem(final NFOrigem origem) {
         this.origem = origem;
@@ -99,6 +102,10 @@ public class NFNotaInfoItemImpostoICMS20 extends DFBase {
     public void setValorFundoCombatePobreza(final BigDecimal valorFundoCombatePobreza) {
         this.valorFundoCombatePobreza = DFBigDecimalValidador.tamanho15Com2CasasDecimais(valorFundoCombatePobreza, "Valor fundo combate pobreza");
     }
+    
+    public void setIndicadorDeduzDesoneracao(final NFInfoDeduzDesoneracao indicadorDeduzDesoneracao) {
+        this.indicadorDeduzDesoneracao = indicadorDeduzDesoneracao;
+    }
 
     public NFOrigem getOrigem() {
         return this.origem;
@@ -147,4 +154,10 @@ public class NFNotaInfoItemImpostoICMS20 extends DFBase {
     public String getValorFundoCombatePobreza() {
         return this.valorFundoCombatePobreza;
     }
+
+    public NFInfoDeduzDesoneracao getIndicadorDeduzDesoneracao() {
+        return indicadorDeduzDesoneracao;
+    }
+
+   
 }

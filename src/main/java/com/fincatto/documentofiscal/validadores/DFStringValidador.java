@@ -637,6 +637,12 @@ public abstract class DFStringValidador {
             DFStringValidador.validaTamanhoMaximo(string, 25, info);
         }
     }
+    
+    public static void tamanho128(final String string, final String info) {
+        if (string != null) {
+            DFStringValidador.validaTamanhoMaximo(string, 128, info);
+        }
+    }
 
     /**
      * Metodo para validacao de Strings.

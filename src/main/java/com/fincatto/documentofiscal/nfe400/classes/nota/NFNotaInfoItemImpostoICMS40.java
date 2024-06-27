@@ -23,6 +23,9 @@ public class NFNotaInfoItemImpostoICMS40 extends DFBase {
 
     @Element(name = "motDesICMS", required = false)
     private NFNotaMotivoDesoneracaoICMS motivoDesoneracaoICMS;
+    
+    @Element(name = "indDeduzDeson", required = false)
+    private NFInfoDeduzDesoneracao indicadorDeduzDesoneracao;
 
     public void setOrigem(final NFOrigem origem) {
         this.origem = origem;
@@ -40,6 +43,10 @@ public class NFNotaInfoItemImpostoICMS40 extends DFBase {
         this.motivoDesoneracaoICMS = motivoDesoneracaoICMS;
     }
 
+    public void setIndicadorDeduzDesoneracao(final NFInfoDeduzDesoneracao indicadorDeduzDesoneracao) {
+        this.indicadorDeduzDesoneracao = indicadorDeduzDesoneracao;
+    }
+    
     public NFOrigem getOrigem() {
         return this.origem;
     }
@@ -55,4 +62,9 @@ public class NFNotaInfoItemImpostoICMS40 extends DFBase {
     public NFNotaMotivoDesoneracaoICMS getMotivoDesoneracaoICMS() {
         return this.motivoDesoneracaoICMS;
     }
+
+    public NFInfoDeduzDesoneracao getIndicadorDeduzDesoneracao() {
+        return indicadorDeduzDesoneracao;
+    }
+
 }

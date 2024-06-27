@@ -14,9 +14,12 @@ public enum NFMeioPagamento {
     DUPLICATA_MERCANTIL("14", "Duplicata mercantil"),
     BOLETO_BANCARIO("15", "Boleto bancario"),
     DEPOSITO_BANCARIO("16", "Deposito bancario"),
-    PIX("17", "Pagamento Instantaneo (PIX)"),
+    PIX_DINAMICO("17", "Pagamento Instant\u00E2neo (PIX) - Din\u00E2mico"),    
     TRANSFERENCIA_BANCARIA("18", "Transferencia bancaria"),
-    FIDELIDADE_CASHBACK("19", "Programa de fidelidade (Cashback)"),	
+    FIDELIDADE_CASHBACK("19", "Programa de fidelidade (Cashback)"),    
+    PIX_ESTATICO("20", "Pagamento Instant\u00E2neo (PIX) - Est\u00E1tico"),
+    CREDITO_LOJA("21", "Cr\u00E9dito em Loja"),
+    PAGAMENTO_ELETRONICO_NAO_INFORMADO("22", "Pagamento Eletr\u00F4nico n\u00E3o Informado - falha de hardware do sistema emissor"),
     SEM_PAGAMENTO("90", "Sem pagamento"),
     OUTRO("99", "Outro");
 

@@ -72,6 +72,9 @@ public class NFNotaInfoItemImpostoICMS90 extends DFBase {
 
     @Element(name = "motDesICMS", required = false)
     private NFNotaMotivoDesoneracaoICMS desoneracao;
+    
+    @Element(name = "indDeduzDeson", required = false)
+    private NFInfoDeduzDesoneracao indicadorDeduzDesoneracao;
 
     @Element(name = "vICMSSTDeson", required = false)
     private String valorICMSSTDesonerado;
@@ -267,5 +270,13 @@ public class NFNotaInfoItemImpostoICMS90 extends DFBase {
 
     public NFNotaMotivoDesoneracaoICMS getMotivoDesoneracaoICMSST() {
         return motivoDesoneracaoICMSST;
+    }
+
+    public NFInfoDeduzDesoneracao getIndicadorDeduzDesoneracao() {
+        return indicadorDeduzDesoneracao;
+    }
+
+    public void setIndicadorDeduzDesoneracao(NFInfoDeduzDesoneracao indicadorDeduzDesoneracao) {
+        this.indicadorDeduzDesoneracao = indicadorDeduzDesoneracao;
     }
 }
