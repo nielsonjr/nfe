@@ -1,6 +1,7 @@
 package com.fincatto.documentofiscal.nfe400.classes.nota;
 
 import com.fincatto.documentofiscal.DFBase;
+import com.fincatto.documentofiscal.DFUnidadeFederativa;
 import com.fincatto.documentofiscal.nfe400.classes.NFIndicadorFormaPagamento;
 import com.fincatto.documentofiscal.validadores.DFBigDecimalValidador;
 import com.fincatto.documentofiscal.validadores.DFStringValidador;
@@ -25,11 +26,17 @@ public class NFNotaInfoFormaPagamento extends DFBase {
     @Element(name = "vPag")
     private String valorPagamento;
 
-    @Element(name = "card", required = false)
-    private NFNotaInfoCartao cartao;
-    
     @Element(name = "dPag", required = false)
     private LocalDate dataPagamento;
+
+    @Element(name = "CNPJPag", required = false)
+    private String cnpjTransacionalPagamento;
+
+    @Element(name = "UFPag", required = false)
+    private String ufTransacionalPagamento;
+
+    @Element(name = "card", required = false)
+    private NFNotaInfoCartao cartao;
 
     public NFNotaInfoFormaPagamento setCartao(final NFNotaInfoCartao cartao) {
         this.cartao = cartao;
@@ -52,6 +59,21 @@ public class NFNotaInfoFormaPagamento extends DFBase {
 
     public NFNotaInfoFormaPagamento setValorPagamento(final BigDecimal valorPagamento) {
         this.valorPagamento = DFBigDecimalValidador.tamanho15Com2CasasDecimais(valorPagamento, "Valor Pagamento");
+        return this;
+    }
+
+    public NFNotaInfoFormaPagamento setDataPagamento(final LocalDate dataPagamento) {
+        this.dataPagamento = dataPagamento;
+        return this;
+    }
+
+    public NFNotaInfoFormaPagamento setCnpjTransacionalPagamento(final String cnpjTransacionalPagamento) {
+        this.cnpjTransacionalPagamento = cnpjTransacionalPagamento;
+        return this;
+    }
+
+    public NFNotaInfoFormaPagamento setUfTransacionalPagamento(final DFUnidadeFederativa ufTransacionalPagamento) {
+        this.ufTransacionalPagamento = ufTransacionalPagamento.getCodigo();
         return this;
     }
 
@@ -81,8 +103,11 @@ public class NFNotaInfoFormaPagamento extends DFBase {
         return dataPagamento;
     }
 
-    public NFNotaInfoFormaPagamento setDataPagamento(final LocalDate dataPagamento) {
-        this.dataPagamento = dataPagamento;
-        return this;
+    public String getCnpjTransacionalPagamento() {
+        return cnpjTransacionalPagamento;
+    }
+
+    public String getUfTransacionalPagamento() {
+        return ufTransacionalPagamento;
     }
 }
