@@ -41,8 +41,13 @@ public enum NFNotaInfoTipoVeiculo {
     }
 
     public static NFNotaInfoTipoVeiculo valueOfCodigo(final String codigo) {
+        if(StringUtils.isEmpty(codigo)) {
+            return null;
+        }
+        
+        String codigoTratado = StringUtils.removeStart(codigo, "0");
         for (final NFNotaInfoTipoVeiculo tipoVeiculo : NFNotaInfoTipoVeiculo.values()) {
-            if (tipoVeiculo.getCodigo().equals(codigo)) {
+            if (tipoVeiculo.getCodigo().equals(codigoTratado)) {
                 return tipoVeiculo;
             }
         }
