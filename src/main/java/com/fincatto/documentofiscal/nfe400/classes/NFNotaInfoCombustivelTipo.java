@@ -52,4 +52,8 @@ public enum NFNotaInfoCombustivelTipo {
     public String toString() {
         return codigo + " - " + descricao;
     }
+    
+    public String getDescricao() {
+        return this.descricao;
+    }
 }
