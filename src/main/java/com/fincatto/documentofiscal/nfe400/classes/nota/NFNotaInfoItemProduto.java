@@ -48,8 +48,6 @@ public class NFNotaInfoItemProduto extends DFBase {
     @Element(name = "cBenef", required = false)
     private String codigoBeneficioFiscalUF;
     
-    //TODO Grupo de informações sobre o Crédito Presumido
-
     @Element(name = "gCred", required = false)
     private NFNotaInfoItemProdutoGrupoCreditoPresumido grupoCreditoPresumido;
 

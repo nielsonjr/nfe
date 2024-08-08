@@ -20,13 +20,6 @@ public class NFNotaInfoPagamento extends DFBase {
     @Element(name = "vTroco", required = false)
     private String valorTroco;
     
-    @Element(name = "CNPJPag", required = false)
-    private String cnpjTransacionalPagamento;
-    
-    @Element(name = "UFPag", required = false)
-    private String ufPagamento;
-
-
     public NFNotaInfoPagamento setDetalhamentoFormasPagamento(final List<NFNotaInfoFormaPagamento> detalhamentoFormasPagamento) {
         DFListValidador.tamanho100(detalhamentoFormasPagamento, "Detalhamento de formas de pagamento");
         this.detalhamentoFormasPagamento = detalhamentoFormasPagamento;
@@ -45,21 +38,4 @@ public class NFNotaInfoPagamento extends DFBase {
         this.valorTroco = DFBigDecimalValidador.tamanho15Com2CasasDecimais(valorTroco, "Valor troco");
     }
     
-    public String getCnpjTransacionalPagamento() {
-        DFStringValidador.cnpj(cnpjTransacionalPagamento);
-        return cnpjTransacionalPagamento;
-    }
-
-    public void setCnpjTransacionalPagamento(String cnpjTransacionalPagamento) {
-        this.cnpjTransacionalPagamento = cnpjTransacionalPagamento;
-    }
-
-    public String getUfPagamento() {
-        return ufPagamento;
-    }
-
-    public void setUfPagamento(String ufPagamento) {
-        DFStringValidador.exatamente2(ufPagamento, "UF onde o pagamento foi processado");
-        this.ufPagamento = ufPagamento;
-    }
 }

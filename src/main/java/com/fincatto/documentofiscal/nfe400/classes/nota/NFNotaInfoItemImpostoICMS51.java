@@ -9,6 +9,7 @@ import com.fincatto.documentofiscal.nfe400.classes.NFNotaInfoImpostoTributacaoIC
 import com.fincatto.documentofiscal.nfe400.classes.NFNotaInfoItemModalidadeBCICMS;
 import com.fincatto.documentofiscal.nfe400.classes.NFOrigem;
 import com.fincatto.documentofiscal.validadores.DFBigDecimalValidador;
+import com.fincatto.documentofiscal.validadores.DFStringValidador;
 
 public class NFNotaInfoItemImpostoICMS51 extends DFBase {
 	private static final long serialVersionUID = -5575047808092974601L;
@@ -60,6 +61,9 @@ public class NFNotaInfoItemImpostoICMS51 extends DFBase {
 
 	@Element(name = "vFCPEfet", required = false)
 	private String valorEfetivoFundoCombatePobreza;
+	
+	@Element(name = "cBenefRBC", required = false)
+	private String codigoBeneficioFiscalUFRBC;	
 
 	public String getPercentualDiferimentoFundoCombatePobreza() {
 		return percentualDiferimentoFundoCombatePobreza;
@@ -206,4 +210,14 @@ public class NFNotaInfoItemImpostoICMS51 extends DFBase {
 	public String getValorFundoCombatePobreza() {
 		return this.valorFundoCombatePobreza;
 	}
+
+    public String getCodigoBeneficioFiscalUFRBC() {
+        return codigoBeneficioFiscalUFRBC;
+    }
+
+    public void setCodigoBeneficioFiscalUFRBC(String codigoBeneficioFiscalUFRBC) {
+        DFStringValidador.validaIntervalo(codigoBeneficioFiscalUFRBC, 8, 10, "Codigo de Beneficio Fiscal na UF aplicado ao item quando houver RBC.");
+        
+        this.codigoBeneficioFiscalUFRBC = codigoBeneficioFiscalUFRBC;
+    }
 }

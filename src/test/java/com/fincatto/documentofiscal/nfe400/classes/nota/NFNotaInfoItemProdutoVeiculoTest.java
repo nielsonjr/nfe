@@ -19,7 +19,7 @@ public class NFNotaInfoItemProdutoVeiculoTest {
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirPotenciaComTamanhoInvalido() {
         try {
-            new NFNotaInfoItemProdutoVeiculo().setPotencia("ABC");
+            new NFNotaInfoItemProdutoVeiculo().setPotencia("ABCDEF");
         } catch (final IllegalStateException e) {
             new NFNotaInfoItemProdutoVeiculo().setTipoPintura("ABCDE");
         }
@@ -47,7 +47,7 @@ public class NFNotaInfoItemProdutoVeiculoTest {
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirNumeroSerieComTamanhoInvalido() {
         try {
-            new NFNotaInfoItemProdutoVeiculo().setNumeroSerie("XBxVyiVV");
+            new NFNotaInfoItemProdutoVeiculo().setNumeroSerie("XBxVyiVVD14");
         } catch (final IllegalStateException e) {
             new NFNotaInfoItemProdutoVeiculo().setNumeroSerie("XBxVyiVVD1");
         }
@@ -66,7 +66,7 @@ public class NFNotaInfoItemProdutoVeiculoTest {
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirDistanciaEntreEixosComTamanhoInvalido() {
         try {
-            new NFNotaInfoItemProdutoVeiculo().setDistanciaEntreEixos("ABC");
+            new NFNotaInfoItemProdutoVeiculo().setDistanciaEntreEixos("ABCDEF");
         } catch (final IllegalStateException e) {
             new NFNotaInfoItemProdutoVeiculo().setDistanciaEntreEixos("ABCDE");
         }

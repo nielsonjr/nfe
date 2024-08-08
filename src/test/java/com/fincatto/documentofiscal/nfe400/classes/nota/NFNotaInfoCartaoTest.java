@@ -9,7 +9,7 @@ public class NFNotaInfoCartaoTest {
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirNumeroAutorizacaoOperacaoCartaoComTamanhoInvalido() {
-        new NFNotaInfoCartao().setNumeroAutorizacaoOperacaoCartao("9ItpS1hBk3TyhjUB3I901");
+        new NFNotaInfoCartao().setNumeroAutorizacaoOperacaoCartao("bd28biJPpJ1jrBr185WiMenxq6GLcCrk5JdtfA9tv1xduiqLWA5rwBNPhjH2GVRFVPtanKa1d5K4XK2rP2v8DT69j4fe0FbdaV6CH0vNY9EqfBUFyWFSanSBegfLeNdrb");
     }
 
     @Test(expected = IllegalStateException.class)
@@ -44,10 +44,15 @@ public class NFNotaInfoCartaoTest {
         cartao.setNumeroAutorizacaoOperacaoCartao("9ItpS1hBk3TyhjUB3I90");
         cartao.toString();
     }
+    
+    @Test(expected = IllegalStateException.class)
+    public void naoDevePermitirIdTerminaoPagamentoComTamanhoInvalido() {
+        new NFNotaInfoCartao().setIdTerminalPagamento("G1zFSQzC3p4hdXtjjxRFrLYvedB04X5hrFTMia1wx");
+    }
 
     @Test
     public void deveGerarXMLDeAcordoComOPadraoEstabelecido() {
-        final String xmlEsperado = "<NFNotaInfoCartao><tpIntegra>1</tpIntegra><CNPJ>12345678901234</CNPJ><tBand>02</tBand><cAut>9ItpS1hBk3TyhjUB3I90</cAut></NFNotaInfoCartao>";
+        final String xmlEsperado = "<NFNotaInfoCartao><tpIntegra>1</tpIntegra><CNPJ>12345678901234</CNPJ><tBand>02</tBand><cAut>9ItpS1hBk3TyhjUB3I90</cAut><CNPJReceb>12345678901234</CNPJReceb><idTermPag>erX29U76QbGK1q5QhRZitSHp6MBPG42x63KgM5wu</idTermPag></NFNotaInfoCartao>";
         Assert.assertEquals(xmlEsperado, FabricaDeObjetosFake.getNFNotaInfoCartao().toString());
     }
 }

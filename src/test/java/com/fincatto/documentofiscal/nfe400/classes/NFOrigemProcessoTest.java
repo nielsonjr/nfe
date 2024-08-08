@@ -11,6 +11,8 @@ public class NFOrigemProcessoTest {
         Assert.assertEquals("1", NFOrigemProcesso.JUSTICA_FEDERAL.getCodigo());
         Assert.assertEquals("2", NFOrigemProcesso.JUSTICA_ESTADUAL.getCodigo());
         Assert.assertEquals("3", NFOrigemProcesso.SECEX_RFB.getCodigo());
+        Assert.assertEquals("4", NFOrigemProcesso.CONFAZ.getCodigo());
+        Assert.assertEquals("9", NFOrigemProcesso.OUTROS.getCodigo());
     }
 
     @Test

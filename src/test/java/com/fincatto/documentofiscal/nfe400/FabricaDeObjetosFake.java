@@ -247,6 +247,8 @@ public class FabricaDeObjetosFake {
         cartao.setNumeroAutorizacaoOperacaoCartao("9ItpS1hBk3TyhjUB3I90");
         cartao.setOperadoraCartao(NFOperadoraCartao.MASTERCARD);
         cartao.setTipoIntegracao(NFTipoIntegracaoPagamento.INTEGRADO);
+        cartao.setCnpjBeneficiario("12345678901234");
+        cartao.setIdTerminalPagamento("erX29U76QbGK1q5QhRZitSHp6MBPG42x63KgM5wu");
         return cartao;
     }
 

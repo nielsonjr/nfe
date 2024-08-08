@@ -30,6 +30,18 @@ public class NFNotaInfoItemImpostoICMS51Test {
 	public void naoDevePermitirValorICMSComTamanhoDiferente() {
 		new NFNotaInfoItemImpostoICMS51().setValorICMS(new BigDecimal("10000000000000"));
 	}
+	
+    @Test(expected = IllegalStateException.class)
+    public void naoDevePermitirCodigoBeneficioFiscalUFRBCComTamanhoMaiorPermitido() {
+        new NFNotaInfoItemImpostoICMS51().setCodigoBeneficioFiscalUFRBC(
+                "12345678901");
+    }
+    
+    @Test(expected = IllegalStateException.class)
+    public void naoDevePermitirCodigoBeneficioFiscalUFRBCComTamanhoMenorPermitido() {
+        new NFNotaInfoItemImpostoICMS51().setCodigoBeneficioFiscalUFRBC(
+                "1234567");
+    }
 
 	@Test
 	public void naoDevePermitirValorICMSDiferimentoNulo() {
@@ -260,8 +272,9 @@ public class NFNotaInfoItemImpostoICMS51Test {
 		icms51.setPercentualDiferimentoFundoCombatePobreza(new BigDecimal("99.99"));
 		icms51.setValorDiferimentoFundoCombatePobreza(new BigDecimal("999999999999.99"));
 		icms51.setValorEfetivoFundoCombatePobreza(new BigDecimal("999999999999.99"));
+		icms51.setCodigoBeneficioFiscalUFRBC("K5TU731DDQ");
 
-		final String xmlEsperado = "<NFNotaInfoItemImpostoICMS51><orig>0</orig><CST>40</CST><modBC>3</modBC><pRedBC>99.99</pRedBC><vBC>999999999999.99</vBC><pICMS>99.99</pICMS><vICMSOp>999999999999.99</vICMSOp><pDif>99.9999</pDif><vICMSDif>999999999999.99</vICMSDif><vICMS>999999999999.99</vICMS><vBCFCP>999999999999.99</vBCFCP><pFCP>99.99</pFCP><vFCP>999999999999.99</vFCP><pFCPDif>99.99</pFCPDif><vFCPDif>999999999999.99</vFCPDif><vFCPEfet>999999999999.99</vFCPEfet></NFNotaInfoItemImpostoICMS51>";
+		final String xmlEsperado = "<NFNotaInfoItemImpostoICMS51><orig>0</orig><CST>40</CST><modBC>3</modBC><pRedBC>99.99</pRedBC><vBC>999999999999.99</vBC><pICMS>99.99</pICMS><vICMSOp>999999999999.99</vICMSOp><pDif>99.9999</pDif><vICMSDif>999999999999.99</vICMSDif><vICMS>999999999999.99</vICMS><vBCFCP>999999999999.99</vBCFCP><pFCP>99.99</pFCP><vFCP>999999999999.99</vFCP><pFCPDif>99.99</pFCPDif><vFCPDif>999999999999.99</vFCPDif><vFCPEfet>999999999999.99</vFCPEfet><cBenefRBC>K5TU731DDQ</cBenefRBC></NFNotaInfoItemImpostoICMS51>";
 		Assert.assertEquals(xmlEsperado, icms51.toString());
 	}
 }
