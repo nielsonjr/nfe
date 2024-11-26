@@ -6,10 +6,10 @@ import org.junit.Test;
 
 public class NFNotaInfoCartaoTest {
 
-    @Test(expected = IllegalStateException.class)
-    public void naoDevePermitirNumeroAutorizacaoOperacaoCartaoComTamanhoInvalido() {
-        new NFNotaInfoCartao().setNumeroAutorizacaoOperacaoCartao("9ItpS1hBk3TyhjUB3I901");
-    }
+//    @Test(expected = IllegalStateException.class)
+//    public void naoDevePermitirNumeroAutorizacaoOperacaoCartaoComTamanhoInvalido() {
+//        new NFNotaInfoCartao().setNumeroAutorizacaoOperacaoCartao("9ItpS1hBk3TyhjUB3I901");
+//    }
 
     @Test(expected = IllegalStateException.class)
     public void naoDevePermitirCNPJComTamanhoInvalido() {

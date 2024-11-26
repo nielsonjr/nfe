@@ -94,7 +94,7 @@ public class NFNotaInfoItemProdutoVeiculo extends DFBase {
     }
 
     public void setCodigoCor(final String codigoCor) {
-        DFStringValidador.exatamente4(codigoCor, "Codigo Cor Veiculo");
+        DFStringValidador.tamanho4(codigoCor, "Codigo Cor Veiculo");
         this.codigoCor = codigoCor;
     }
 
@@ -104,12 +104,12 @@ public class NFNotaInfoItemProdutoVeiculo extends DFBase {
     }
 
     public void setPotencia(final String potencia) {
-        DFStringValidador.exatamente4(potencia, "Potencia Veiculo");
+        DFStringValidador.tamanho4(potencia, "Potencia Veiculo");
         this.potencia = potencia;
     }
 
     public void setCilindrada(final String cilindrada) {
-        DFStringValidador.exatamente4(cilindrada, "Cilindrada Veiculo");
+        DFStringValidador.tamanho4(cilindrada, "Cilindrada Veiculo");
         this.cilindrada = cilindrada;
     }
 
@@ -122,7 +122,7 @@ public class NFNotaInfoItemProdutoVeiculo extends DFBase {
     }
 
     public void setNumeroSerie(final String numeroSerie) {
-        DFStringValidador.exatamente9(numeroSerie, "Numero Serie Veiculo");
+        DFStringValidador.tamanho9(numeroSerie, "Numero Serie Veiculo");
         this.numeroSerie = numeroSerie;
     }
 
@@ -140,7 +140,7 @@ public class NFNotaInfoItemProdutoVeiculo extends DFBase {
     }
 
     public void setDistanciaEntreEixos(final String distanciaEntreEixos) {
-        DFStringValidador.exatamente4(distanciaEntreEixos, "Distancia Entre Eixos Veiculo");
+        DFStringValidador.tamanho4(distanciaEntreEixos, "Distancia Entre Eixos Veiculo");
         this.distanciaEntreEixos = distanciaEntreEixos;
     }
 
@@ -176,7 +176,7 @@ public class NFNotaInfoItemProdutoVeiculo extends DFBase {
     }
 
     public void setCodigoMarcaModelo(final String codigoMarcaModelo) {
-        DFStringValidador.exatamente6N(codigoMarcaModelo, "Codigo Marca Modelo Veiculo");
+        DFStringValidador.tamanho6N(codigoMarcaModelo, "Codigo Marca Modelo Veiculo");
         this.codigoMarcaModelo = codigoMarcaModelo;
     }
 
