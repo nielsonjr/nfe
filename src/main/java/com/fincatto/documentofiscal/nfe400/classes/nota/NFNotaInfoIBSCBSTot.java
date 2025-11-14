@@ -17,13 +17,13 @@ public class NFNotaInfoIBSCBSTot extends DFBase {
   @Element(name = "vBCIBSCBS")
   private String vBCIBSCBS; // W35
 
-  @Element(name = "gIBS")
+  @Element(name = "gIBS", required = false)
   private NFNotaInfoIBSCBSTot.GIBS gIBS; // W36
 
-  @Element(name = "gCBS")
+  @Element(name = "gCBS", required = false)
   private NFNotaInfoIBSCBSTot.GCBS gCBS; // W50
 
-  @Element(name = "gMono")
+  @Element(name = "gMono", required = false)
   private NFNotaInfoIBSCBSTot.GMono gMono; // W57
 
   public String getVBCIBSCBS() {
