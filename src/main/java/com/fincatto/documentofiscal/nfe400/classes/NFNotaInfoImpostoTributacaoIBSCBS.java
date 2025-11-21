@@ -48,7 +48,7 @@ public enum NFNotaInfoImpostoTributacaoIBSCBS {
     CST_510("510", "Diferimento",
     		 UM, ZERO, ZERO, UM, ZERO, SIM, SIM, NAO, NAO, NAO, NAO, SIM, NAO, SIM),
 
-    CST_515("515", "Diferimento com redução de alíquota",
+    CST_515("515", "Diferimento com redu\u00e7\u00e3o de al\u00edquota",
             UM, ZERO, UM, UM, ZERO, NAO, NAO, NAO, NAO, NAO, NAO, NAO, NAO, NAO),
     
     CST_550("550", "Suspens\u00e3o",
