@@ -120,7 +120,7 @@ public class NFNotaInfoIBSCBSTot extends DFBase {
 
     // W37
     public static class GIBSUF extends DFBase {
-    	
+
 	  private static final long serialVersionUID = 2194095471152971393L;
 
       @Element(name = "vDif", required = true)
@@ -202,7 +202,7 @@ public class NFNotaInfoIBSCBSTot extends DFBase {
 
   // W50
   public static class GCBS extends DFBase {
-	  
+
 	private static final long serialVersionUID = 1136600045286532108L;
 
     @Element(required = true)
