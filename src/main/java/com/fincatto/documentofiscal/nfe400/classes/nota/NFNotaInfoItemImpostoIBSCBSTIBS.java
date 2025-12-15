@@ -1,12 +1,12 @@
 package com.fincatto.documentofiscal.nfe400.classes.nota;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
 
 import org.simpleframework.xml.Element;
 
 import com.fincatto.documentofiscal.DFBase;
 import com.fincatto.documentofiscal.nfe400.classes.NFNotaInfoImpostoTributacaoIBSCBS;
+import com.fincatto.documentofiscal.nfe400.classes.nota.NFNotaInfoItemImpostoIBSCBS.GrupoAjusteCompetencia;
 import com.fincatto.documentofiscal.validadores.DFBigDecimalValidador;
 
 // UB15

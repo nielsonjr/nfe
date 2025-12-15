@@ -1,13 +1,18 @@
 package com.fincatto.documentofiscal.nfe400.classes.evento.atualizacaodataprevisaoentrega;
 
-import com.fincatto.documentofiscal.DFBase;;
+import java.math.BigDecimal;
+import java.util.List;
+
+import org.simpleframework.xml.Attribute;
+import org.simpleframework.xml.Element;
+import org.simpleframework.xml.ElementList;
+import org.simpleframework.xml.Namespace;
+import org.simpleframework.xml.Root;
+
+import com.fincatto.documentofiscal.DFBase;
 import com.fincatto.documentofiscal.validadores.DFBigDecimalValidador;
 import com.fincatto.documentofiscal.validadores.DFListValidador;
 import com.fincatto.documentofiscal.validadores.DFStringValidador;
-import org.simpleframework.xml.*;
-
-import java.math.BigDecimal;
-import java.util.List;
 
 @Root(name = "envEvento")
 @Namespace(reference = "http://www.portalfiscal.inf.br/nfe")
