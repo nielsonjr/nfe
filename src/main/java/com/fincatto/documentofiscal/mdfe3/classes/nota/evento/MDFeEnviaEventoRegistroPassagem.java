@@ -38,12 +38,6 @@ public class MDFeEnviaEventoRegistroPassagem extends DFBase {
     @Element(name = "tpSentido")
     private String tipoSentido;
 
-    @Element(name = "latitude", required = false)
-    private String latitude;
-
-    @Element(name = "longitude", required = false)
-    private String longitude;
-
     @Element(name = "placa")
     private String placa;
 
@@ -120,22 +114,6 @@ public class MDFeEnviaEventoRegistroPassagem extends DFBase {
 
     public void setTipoSentido(final String tipoSentido) {
         this.tipoSentido = tipoSentido;
-    }
-
-    public String getLatitude() {
-        return latitude;
-    }
-
-    public void setLatitude(String latitude) {
-        this.latitude = latitude;
-    }
-
-    public String getLongitude() {
-        return longitude;
-    }
-
-    public void setLongitude(String longitude) {
-        this.longitude = longitude;
     }
 
     public String getPlaca() {
